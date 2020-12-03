@@ -78,9 +78,8 @@ def letsTest(pumpFlowVolume):
                                         if(calcTime(turbineFlowVolume, value[1]) <= 12.0):
                                             outputString = "{:15.2f} {:18d} {:15.2f}  {:7.3f} {:7.2f} {:20.2f} {:20d} {:15.2f}  {:10.4f}\n".format(pumpEfficiency, pumpFlowVolume, pipeDiameter, 
                                                          pipeF, resDepth, turbineEfficiency,turbineFlowVolume, surfaceArea, value[0])
-                                            fid2.write(str(outputString))
-currentTime = time.time()
-fid2 = open('./AcanIdoitright', 'w')                        
+                                            print(str(outputString))
+currentTime = time.time()                        
 fid2.write("Pump Efficiency   Pump Flow Volume   Pipe Diameter   Pipe f   Depth   Turbine Efficiency  Turbine Flow Volume    Surface Area   Ein\n")
 if __name__ == '__main__':
     p = Pool(processes=60)
@@ -88,6 +87,5 @@ if __name__ == '__main__':
     p.close()
     print('done')
     print(time.time() - currentTime)
-    fid2.close()
 
 
